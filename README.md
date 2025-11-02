@@ -178,8 +178,11 @@ Data Model (Schema Summary):
 
 
 Sample Data:
-- Folder: /sample_data/
-- accounts.csv, connections.csv, rules.csv, scans.csv, findings.json
+[accounts.csv](sample_data/account.csv)
+[connections.csv](sample_data/connections.csv)
+[rules.csv](sample_data/rules.csv)
+[scans.csv](sample_data/scans.csv)
+[findings.json](sample_data/findings.json)
 
 Security Notes:
 - Read-only scans by default; cross-account access via External ID.
