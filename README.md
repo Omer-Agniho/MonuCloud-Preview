@@ -60,14 +60,14 @@ Connecting Your AWS Account (Production):
 3. Run a scan and view findings.
 
 Checks Catalog (Public Subset):
-AWS-001 (EC2, High): Security groups allow 0.0.0.0/0 on non-HTTP(S) ports.
-AWS-002 (S3, High): Bucket public read/write (ACL/Policy) when not intended.
-AWS-003 (CloudTrail, Medium): Trail not enabled in all required regions.
-AWS-004 (IAM, High): Root account without MFA.
-AWS-005 (KMS, Medium): CMK rotation disabled.
-AWS-006 (RDS, High): Publicly accessible DB instances.
-AWS-007 (CloudWatch, Low): “Never expire” log retention.
-AWS-008 (EBS, Medium): Unencrypted EBS volumes.
+- AWS-001 (EC2, High): Security groups allow 0.0.0.0/0 on non-HTTP(S) ports.
+- AWS-002 (S3, High): Bucket public read/write (ACL/Policy) when not intended.
+- AWS-003 (CloudTrail, Medium): Trail not enabled in all required regions.
+- AWS-004 (IAM, High): Root account without MFA.
+- AWS-005 (KMS, Medium): CMK rotation disabled.
+- AWS-006 (RDS, High): Publicly accessible DB instances.
+- AWS-007 (CloudWatch, Low): “Never expire” log retention.
+- AWS-008 (EBS, Medium): Unencrypted EBS volumes.
 - Full catalog available to trial users on request.
 
 Automated Remediation (Roadmap):
