@@ -16,21 +16,21 @@ flowchart TD
 
 
 sequenceDiagram
-  participant UI as UI
-  participant API as Flask API
-  participant DB as Postgres
-  participant W as Celery Worker
-  participant AWS as AWS STS + Services
+  participant UI as "UI"
+  participant API as "Flask API"
+  participant DB as "Postgres"
+  participant W as "Celery Worker"
+  participant AWS as "AWS STS + Services"
 
   UI->>API: POST /api/scans {account:"ALL"}
-  API->>DB: insert scan rows (per account)
-  API->>W: enqueue tasks (job_id, account_id)
+  API->>DB: insert scan rows &#40;per account&#41;
+  API->>W: enqueue tasks &#40;job_id, account_id&#41;
   loop for each account
     W->>DB: fetch role_arn, external_id
-    W->>AWS: STS AssumeRole(RoleArn, ExternalId)
-    W->>AWS: Call service APIs (EC2/S3/IAM/…)
-    W->>DB: Upsert findings & resources
+    W->>AWS: STS AssumeRole&#40;RoleArn, ExternalId&#41;
+    W->>AWS: Call service APIs &#40;EC2&#47;S3&#47;IAM&#41;
+    W->>DB: Upsert findings &amp; resources
   end
   UI->>API: GET /api/findings?account=...
   API->>DB: query findings with filters
-  API-->>UI: JSON → charts/table
+  API-->>UI: JSON -&gt; charts&#47;table
