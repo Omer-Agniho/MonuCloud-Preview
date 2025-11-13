@@ -38,29 +38,29 @@ The web app handles auth and multi-tenant scoping, then enqueues scan jobs; the 
 Architecture Diagram:
 
 ```mermaid
-  flowchart TD
-    B[Browser / React (Vite) SPA]
-    A[Flask API server / app.py]
-    Q[(Celery Broker)]
-    W[Celery Worker / scan tasks]
-    D[(PostgreSQL)]
-    C[(AWS APIs)]
+flowchart TD
+  B["Browser / React (Vite) SPA"]
+  A["Flask API server / app.py"]
+  Q["Celery Broker"]
+  W["Celery Worker / scan tasks"]
+  D["PostgreSQL"]
+  C["AWS APIs"]
 
-    B -->|HTTP/HTTPS| A
-    A -->|enqueue| Q
-    W -->|consume| Q
-    W -->|STS AssumeRole / External ID| C
-    A -->|read/write| D
-    W -->|read/write| D
+  B -->|HTTP/HTTPS| A
+  A -->|enqueue| Q
+  W -->|consume| Q
+  W -->|STS AssumeRole / External ID| C
+  A -->|read/write| D
+  W -->|read/write| D
 ```
 
 ```mermaid
 sequenceDiagram
-  participant U as React SPA
-  participant A as API
-  participant D as Postgres
-  participant W as Celery Worker
-  participant S as AWS STS + Services
+  participant U as "React SPA"
+  participant A as "API"
+  participant D as "Postgres"
+  participant W as "Celery Worker"
+  participant S as "AWS STS + Services"
 
   U->>A: POST /api/scans {account:"ALL"}
   A->>D: insert scan rows (per account)
@@ -73,6 +73,7 @@ sequenceDiagram
   U->>A: GET /api/findings?account=...
   A->>D: query findings with filters
   A-->>U: JSON -> charts/table
+
 ```
 
 Screenshots / Demo:
