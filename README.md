@@ -15,7 +15,7 @@ What you'll find here:
 
 > For a walkthrough or a technical deep dive, DM me.
 
-[Live demo](https://monucloud.com)
+[Live demo](https://www.monucloud.com)
 [Public preview repo](https://github.com/Satla-Mocha/MonuCloud-Preview)
 
 Overview:
