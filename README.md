@@ -3,7 +3,7 @@ MonuCloud — Cloud Security Posture Management (Preview) ![CI](https://img.shie
 _Lightweight CSPM with a React (Vite) SPA frontend, scheduled scans, External ID onboarding, and clear remediation guidance._
 
 This repository contains **non-executable preview code** and architecture docs for MonuCloud.
-The **live, working demo** is running at https://monucloud.com.
+The **live, working demo** is running at https://www.monucloud.com.
 
 What you'll find here:
 
